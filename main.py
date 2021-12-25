@@ -25,10 +25,10 @@ if __name__ == '__main__':
     print("Separated")
     print(cr.idm)
     x = cr.idm
-    str = str(x) + "\n"
+    str1 = str(x) + "\n"
 
     file = open('test.txt', 'a')
-    file.write(str)
+    file.write(str1)
     file.close()
 
     # if x == "カード固有のID":
