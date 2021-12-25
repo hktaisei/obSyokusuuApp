@@ -5,7 +5,7 @@ import subprocess
 
 class TestCardReader(object):
   def on_connect(self, tag):
-    print "touched"
+    print("touched")
     self.idm = binascii.hexlify(tag.idm)
     return True
 
@@ -16,26 +16,28 @@ class TestCardReader(object):
     finally:
       clf.close()
 
-if __name__ = '__main__':
-  cr = TestCardReader()
+if __name__ == '__main__':
+  while True :
+    cr = TestCardReader()
 
-  print "touch card:"
-  cr.read_id()
-  print "Separated"
-  print cr.idm
-  x = cr.idm
+    print("touch card:")
+    cr.read_id()
+    print("Separated")
+    print(cr.idm)
+    x = cr.idm
+    str = str(x) + "\n"
 
-  file = open('test.txt', 'w')
-  file.writeLines(x)
-  file.close()
+    file = open('test.txt', 'a')
+    file.write(str)
+    file.close()
 
-  if x = "カード固有のID":
-    subprocess.call("aplay work24.wav", shell=True)
-  elif x == "カード固有のID":
-    subprocess.call("aplay test.wav", shell=True)
-  elif x == "カード固有のID":
-    subprocess.call("aplay teiji.wav", shell=True)
-  else:
-    subprocess.call("aplay hello.wav", shell=True)
+    # if x == "カード固有のID":
+    # subprocess.call("aplay work24.wav", shell=True)
+    # elif x == "カード固有のID":
+    # subprocess.call("aplay test.wav", shell=True)
+    # elif x == "カード固有のID":
+    # subprocess.call("aplay teiji.wav", shell=True)
+    # else:
+    # subprocess.call("aplay hello.wav", shell=True)
 
-  exit()
+    # exit()
